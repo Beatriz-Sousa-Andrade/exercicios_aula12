@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transporte de Colaboradores</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Custom styles for professional dark theme with slate/stone tones - no blue, no white */
+        body {
+            background: #0a0a0f;
+        }
+        /* Custom scrollbar with slate gray */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1c1c22;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #5a5a6e;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7a7a8c;
+        }
+        /* Remove spinner arrows from number inputs */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            opacity: 0.5;
+        }
+        /* Elegant table styles */
+        .elegant-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+        .elegant-table th {
+            background: linear-gradient(135deg, #2c2c38 0%, #23222e 100%);
+            color: #e2e2f0;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            padding: 0.875rem 1rem;
+        }
+        .elegant-table td {
+            padding: 0.875rem 1rem;
+            transition: all 0.2s ease;
+        }
+        .elegant-table tr {
+            transition: all 0.2s ease;
+        }
+        .elegant-table tbody tr {
+            border-bottom: 1px solid #2a2a33;
+        }
+        .elegant-table tbody tr:last-child {
+            border-bottom: none;
+        }
+        .elegant-table tbody tr:nth-child(odd) {
+            background-color: #14141c;
+        }
+        .elegant-table tbody tr:nth-child(even) {
+            background-color: #1a1a24;
+        }
+        .elegant-table tbody tr:hover {
+            background-color: #252530;
+            transform: scale(1.01);
+        }
+        .valor-cell {
+            font-weight: 700;
+            color: #9bcf8b;
+            font-size: 1rem;
+            letter-spacing: -0.01em;
+        }
+        .grupo-cell {
+            color: #cbd5e6;
+            font-weight: 500;
+        }
+        /* Table header first and last border radius */
+        .elegant-table th:first-child {
+            border-top-left-radius: 0.75rem;
+        }
+        .elegant-table th:last-child {
+            border-top-right-radius: 0.75rem;
+        }
+        /* Badge style for group ranges */
+        .group-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(155, 207, 139, 0.1);
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #9bcf8b;
+            border: 1px solid rgba(155, 207, 139, 0.2);
+        }
+        /* Button back styles */
+        .btn-back {
+            transition: all 0.3s ease;
+        }
+        .btn-back:hover {
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+
+<body class="bg-[#0a0a0f] flex flex-col items-center justify-center min-h-screen p-4">
+
+    <main class="w-full max-w-5xl">
+        <!-- Grid responsivo: em telas pequenas fica empilhado, em telas médias e maiores fica lado a lado -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full items-start">
+            
+            <!-- Tabela de Preços com design elegante e moderno -->
+            <div class="bg-[#111117] p-6 rounded-xl shadow-2xl border border-[#2a2a33] transition-all duration-300 hover:shadow-indigo-950/20 h-full">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-bold text-[#cbd5e6] flex items-center gap-2">
+                        <svg class="w-5 h-5 text-[#9bcf8b]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                        Tabela de Preços
+                    </h2>
+                    <span class="text-xs text-[#6f6f80] bg-[#1e1e28] px-3 py-1 rounded-full">Regressivo</span>
+                </div>
+                
+                <table class="elegant-table">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Faixa de Grupo</th>
+                            <th class="text-right">Valor por Pessoa/Dia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="grupo-cell">
+                                <div class="flex items-center gap-2">
+                                    <span class="group-badge">1-49</span>
+                                    <span class="text-sm">pessoas</span>
+                                </div>
+                            </td>
+                            <td class="valor-cell text-right">R$ 4,50</td>
+                        </tr>
+                        <tr>
+                            <td class="grupo-cell">
+                                <div class="flex items-center gap-2">
+                                    <span class="group-badge">50-99</span>
+                                    <span class="text-sm">pessoas</span>
+                                </div>
+                            </td>
+                            <td class="valor-cell text-right">R$ 4,10</td>
+                        </tr>
+                        <tr>
+                            <td class="grupo-cell">
+                                <div class="flex items-center gap-2">
+                                    <span class="group-badge">100-149</span>
+                                    <span class="text-sm">pessoas</span>
+                                </div>
+                            </td>
+                            <td class="valor-cell text-right">R$ 3,80</td>
+                        </tr>
+                        <tr>
+                            <td class="grupo-cell">
+                                <div class="flex items-center gap-2">
+                                    <span class="group-badge">150+</span>
+                                    <span class="text-sm">pessoas ou mais</span>
+                                </div>
+                            </td>
+                            <td class="valor-cell text-right">R$ 3,60</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- Destaque de economia -->
+                <div class="mt-4 pt-3 border-t border-[#2a2a33] text-center">
+                    <p class="text-xs text-[#6f6f80] flex items-center justify-center gap-1">
+                        <svg class="w-3 h-3 text-[#9bcf8b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                        Quanto maior o grupo, menor o valor por pessoa
+                    </p>
+                </div>
+            </div>
+
+            <!-- Formulário de Cálculo com tema escuro profissional -->
+            <div class="bg-[#111117] p-8 rounded-xl shadow-2xl border border-[#2a2a33] transition-all duration-300 h-full">
+                <h1 class="text-2xl font-bold mb-2 text-center text-[#cbd5e6]">Calculadora de Custo</h1>
+                <p class="text-[#6f6f80] text-sm text-center mb-6 -mt-1">Transporte fretado • valores regressivos</p>
+                
+                <form id="transportForm" class="space-y-4">
+                    <div>
+                        <label for="funcionarios" class="block text-sm font-medium text-[#a0a0b5] mb-1.5">Quantidade de funcionários:</label>
+                        <input type="number" id="funcionarios" name="funcionarios" class="mt-1 block w-full border border-[#2c2c36] rounded-lg shadow-sm focus:ring-[#7e7e9a] focus:border-[#7e7e9a] sm:text-sm p-2.5 bg-[#181820] text-[#e2e2f0] placeholder-[#5a5a6e]" placeholder="Ex: 75" required>
+                    </div>
+                    <div>
+                        <label for="dias" class="block text-sm font-medium text-[#a0a0b5] mb-1.5">Quantidade de dias úteis:</label>
+                        <input type="number" id="dias" name="dias" class="mt-1 block w-full border border-[#2c2c36] rounded-lg shadow-sm focus:ring-[#7e7e9a] focus:border-[#7e7e9a] sm:text-sm p-2.5 bg-[#181820] text-[#e2e2f0] placeholder-[#5a5a6e]" placeholder="Ex: 22" required>
+                    </div>
+                    <button type="submit" class="w-full bg-[#2c2c38] hover:bg-[#3c3c4a] text-[#e2e2f0] py-2.5 px-4 rounded-lg shadow-md transition-all duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#7e7e9a] focus:ring-offset-[#111117]">Calcular Custo</button>
+                </form>
+                
+                <!-- Resultado com tons de verde escuro e confortáveis visualmente -->
+                <div id="resultado" class="mt-4 text-center text-lg font-semibold text-[#9bcf8b] bg-[#0f1a0f] p-4 rounded-lg border border-[#2a4a2a] shadow-inner"></div>
+                
+                <button id="limpar" type="button" class="w-full bg-[#1e1e28] hover:bg-[#2a2a34] text-[#b0b0c0] py-2.5 px-4 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#7e7e9a] focus:ring-offset-[#111117] mt-4 font-medium border border-[#2c2c36]">Limpar Formulário</button>
+            </div>
+        </div>
+        
+        <!-- Botão de voltar para página inicial -->
+        <div class="mt-8 flex justify-center">
+            <a href="../index.html" class="btn-back inline-flex items-center gap-2 bg-[#111117] hover:bg-[#1e1e28] text-[#cbd5e6] px-6 py-3 rounded-lg border border-[#2a2a33] transition-all duration-200 font-medium">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Voltar para Página Inicial
+            </a>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body> 
+</html>

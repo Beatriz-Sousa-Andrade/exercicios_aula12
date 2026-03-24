@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Horas Extras </title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Custom styles for professional dark theme with slate/stone tones - no blue, no white, no yellow */
+        body {
+            background: #0b0b0e;
+        }
+        /* Custom scrollbar with slate gray */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1c1c22;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #5a5a6e;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7a7a8c;
+        }
+        /* Remove spinner arrows from number inputs */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            opacity: 0.5;
+        }
+        /* Professional transitions */
+        .transition-smooth {
+            transition: all 0.2s ease;
+        }
+        /* Button back styles */
+        .btn-back {
+            transition: all 0.3s ease;
+        }
+        .btn-back:hover {
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+
+<body class="bg-[#0a0a0f] flex flex-col items-center justify-center min-h-screen p-4">
+    <main class="w-full max-w-md">
+        <div class="bg-[#111117] p-8 rounded-xl shadow-2xl w-full border border-[#2a2a33]">
+            <h1 class="text-2xl font-bold mb-2 text-center text-[#cbd5e6]">Calculadora de Horas Extras</h1>
+            <p class="text-[#6f6f80] text-sm text-center mb-6 -mt-2">Cálculo preciso • adicional 50% fins de semana</p>
+            
+            <form id="overtimeForm" class="space-y-4">
+                <div>
+                    <label for="salario" class="block text-sm font-medium text-[#a0a0b5]">Valor do salário mensal bruto:</label>
+                    <input type="number" id="salario" name="salario" class="mt-1 block w-full border border-[#2c2c36] rounded-lg shadow-sm focus:ring-[#7e7e9a] focus:border-[#7e7e9a] sm:text-sm p-2.5 bg-[#181820] text-[#e2e2f0] placeholder-[#5a5a6e]" placeholder="Ex: 3500" required>
+                </div>
+                <div>
+                    <label for="diassemana" class="block text-sm font-medium text-[#a0a0b5]">Quantidade de horas extras em dias normais (úteis):</label>
+                    <input type="number" id="diassemana" name="diassemana" class="mt-1 block w-full border border-[#2c2c36] rounded-lg shadow-sm focus:ring-[#7e7e9a] focus:border-[#7e7e9a] sm:text-sm p-2.5 bg-[#181820] text-[#e2e2f0] placeholder-[#5a5a6e]" placeholder="Ex: 5" required>
+                </div>
+                <div>
+                    <label for="finaisdesemana" class="block text-sm font-medium text-[#a0a0b5]">Quantidade de horas extras realizadas aos finais de semana:</label>
+                    <input type="number" id="finaisdesemana" name="finaisdesemana" class="mt-1 block w-full border border-[#2c2c36] rounded-lg shadow-sm focus:ring-[#7e7e9a] focus:border-[#7e7e9a] sm:text-sm p-2.5 bg-[#181820] text-[#e2e2f0] placeholder-[#5a5a6e]" placeholder="Ex: 2.5" required>
+                </div>
+                <button type="submit" class="w-full bg-[#2c2c38] hover:bg-[#3c3c4a] text-[#e2e2f0] py-2.5 px-4 rounded-lg shadow-md transition-all duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#7e7e9a] focus:ring-offset-[#111117]">Calcular Horas Extras</button>
+            </form>
+            
+            <div id="resultado" class="mt-4 text-center text-lg font-semibold text-[#9bcf8b] bg-[#0f1a0f] p-4 rounded-lg border border-[#2a4a2a] shadow-inner"></div>
+            
+            <!-- Botão para limpar o formulário -->
+            <button id="limpar" class="w-full bg-[#1e1e28] hover:bg-[#2a2a34] text-[#b0b0c0] py-2.5 px-4 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#7e7e9a] focus:ring-offset-[#111117] mt-4 font-medium border border-[#2c2c36]">Limpar Formulário</button>
+        </div>
+        
+        <!-- Botão de voltar para página inicial -->
+        <div class="mt-8 flex justify-center">
+            <a href="../index.html" class="btn-back inline-flex items-center gap-2 bg-[#111117] hover:bg-[#1e1e28] text-[#cbd5e6] px-6 py-3 rounded-lg border border-[#2a2a33] transition-all duration-200 font-medium">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Voltar para Página Inicial
+            </a>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body> 
+</html>
