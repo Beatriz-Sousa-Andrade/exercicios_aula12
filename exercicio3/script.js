@@ -32,10 +32,12 @@ form.addEventListener('submit', function(event) {
     
     // Exibe o resultado formatado em Moeda Real (R$) e substitui o ponto por vírgula para o formato brasileiro
     resultadoDiv.innerHTML = `
-        <div class="p-4 bg-green-100 border-l-4 border-green-500 text-green-700">
-            <p>Valor por Pessoa: R$ ${valorPorPessoa.toFixed(2).replace('.', ',')}</p>
-            <p class="text-xl mt-2">Custo Mensal Total: <span class="font-bold">R$ ${custoTotal.toFixed(2).replace('.', ',')}</span></p>
-        </div>
+    <div class="p-5 bg-[#111117] border-l-4 rounded-xl shadow-2xl border border-[#2a2a33] transition-all duration-300">
+    <p class="text-[#6f6f80] text-sm mb-1">Valor por Pessoa: R$ ${valorPorPessoa.toFixed(2).replace('.', ',')}</p>
+    <div class="mt-3 pt-3 border-t border-[#2a2a33]">
+        <p class="text-xl text-[#cbd5e6]">Custo Mensal Total: <span class="font-bold text-[#cbd5e6]">R$ ${custoTotal.toFixed(2).replace('.', ',')}</span></p>
+    </div>
+</div>
     `;
 });
 

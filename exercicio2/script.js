@@ -31,11 +31,13 @@ form.addEventListener('submit', function(event) {
     const novoSalario = salarioAtual + aumentoValor;// Exibe o resultado formatado em Moeda Real (R$)
     // Exibe o resultado formatado em Moeda Real (R$)
     resultadoDiv.innerHTML = `  
-        <div class="p-4 bg-blue-100 border-l-4 border-blue-500 text-blue-700">
-            <p>Salário Atual: R$ ${salarioAtual.toFixed(2)}</p>
-            <p>Aumento: ${ (aumentoPercentual * 100).toFixed(0) }% (R$ ${aumentoValor.toFixed(2)})</p>  
-            <p class="text-xl mt-2">Novo Salário: <span class="font-bold">R$ ${novoSalario.toFixed(2)}</span></p>
-        </div>
+<div class="p-5 bg-[#111117] border-l-4  rounded-xl shadow-2xl border border-[#2a2a33] transition-all duration-300">
+    <p class="text-[#6f6f80] text-sm mb-1">Salário Atual: R$ ${salarioAtual.toFixed(2)}</p>
+    <p class="text-[#6f6f80] text-sm">Aumento: <span class="text-white-400">${ (aumentoPercentual * 100).toFixed(0) }%</span> (R$ ${aumentoValor.toFixed(2)})</p>  
+    <div class="mt-3 pt-3 border-t border-[#2a2a33]">
+        <p class="text-xl text-[#cbd5e6]">Novo Salário: <span class="font-bold text-[#cbd5e6]-400">R$ ${novoSalario.toFixed(2)}</span></p>
+    </div>
+</div>
     `;// Limpa o campo de entrada após o cálculo
     document.getElementById('salario').value = '';
     // Remove o foco do campo de entrada após o envio do formulário
