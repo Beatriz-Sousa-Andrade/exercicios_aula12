@@ -3,260 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema Empresarial - Módulos de Gestão</title>
+    <title>Portal RH - Sistema de Gestão Estratégica</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Custom scrollbar para manter a estética dark */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0f; }
+        ::-webkit-scrollbar-thumb { background: #2a2a33; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3f3f4a; }
+        
+        .card-glass {
+            background: rgba(17, 17, 23, 0.8);
+            backdrop-filter: blur(8px);
+        }
+    </style>
 </head>
-<body class="bg-[#0a0a0f] min-h-screen">
+<body class="bg-[#0a0a0f] text-[#cbd5e6] min-h-screen font-sans selection:bg-[#cbd5e6] selection:text-[#0a0a0f]">
     
-    <!-- Header / Navbar -->
-    <nav class="bg-[#111117] border-b border-[#2a2a33] sticky top-0 z-50">
+    <nav class="bg-[#111117]/90 backdrop-blur-md border-b border-[#2a2a33] sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-3">
-                    <div class="bg-gradient-to-br from-[#2c2c38] to-[#23222e] p-2 rounded-lg">
-                        <svg class="w-6 h-6 text-[#cbd5e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-4">
+                    <div class="bg-gradient-to-br from-[#2c2c38] to-[#111117] p-2.5 rounded-xl border border-[#3f3f4a] shadow-inner">
+                        <svg class="w-7 h-7 text-[#cbd5e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                         </svg>
                     </div>
                     <div>
-                        <h1 class="text-xl font-bold text-white">Sistema Empresarial</h1>
-                        <p class="text-xs text-[#8f8fa0]">Módulos de Gestão</p>
+                        <h1 class="text-xl font-black tracking-tight text-white uppercase">Portal <span class="text-[#8f8fa0]">RH</span></h1>
+                        <p class="text-[10px] text-[#6f6f80] font-bold tracking-[0.2em] uppercase">Gestão de Talentos</p>
                     </div>
                 </div>
-                <div class="flex items-center gap-2">
-                    <div class="flex items-center gap-2 bg-[#1a1a22] px-3 py-1.5 rounded-full border border-[#2a2a33]">
-                        <div class="w-2 h-2 bg-[#cbd5e6] rounded-full animate-pulse"></div>
-                        <span class="text-xs text-[#cbd5e6] font-medium">Sistema Online</span>
+                
+                <div class="flex items-center gap-4">
+                    <div class="hidden sm:flex items-center gap-3 bg-[#0a0a0f] px-4 py-2 rounded-lg border border-[#2a2a33]">
+                        <div class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-[#8f8fa0]">Servidor Ativo</span>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
     
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
         
-        <!-- Welcome Section -->
-        <div class="mb-8 lg:mb-12 text-center lg:text-left">
-            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3 tracking-tight">
-                Bem-vindo ao Portal
-                <span class="text-[#cbd5e6]">Corporativo</span>
-            </h2>
-            <p class="text-[#8f8fa0] text-lg max-w-2xl lg:mx-0 mx-auto">
-                Selecione um dos módulos abaixo para acessar as funcionalidades do sistema
+        <header class="mb-12 lg:mb-20">
+            <div class="max-w-3xl">
+                <span class="inline-block px-3 py-1 rounded-md bg-[#1a1a22] border border-[#2a2a33] text-[#8f8fa0] text-[10px] font-bold uppercase tracking-widest mb-4">Dashboard Operacional</span>
+                <h2 class="text-4xl lg:text-6xl font-extrabold text-white mb-6 tracking-tighter">
+                    Soluções Inteligentes para <br class="hidden lg:block">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#5a5a6e]">Recursos Humanos.</span>
+                </h2>
+                <p class="text-[#8f8fa0] text-lg lg:text-xl leading-relaxed">
+                    Acesse as ferramentas de cálculo e gestão. Cada módulo foi desenhado para otimizar a precisão da folha e a transparência corporativa.
+                </p>
+            </div>
+        </header>
+        
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <div class="bg-[#111117] p-6 rounded-2xl border border-[#2a2a33] shadow-sm flex items-center gap-5 group hover:bg-[#1a1a22] transition-all">
+                <div class="bg-[#0a0a0f] p-4 rounded-xl text-[#cbd5e6] group-hover:scale-110 transition-transform">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-[#6f6f80] uppercase tracking-wider">Módulos Calculadores</p>
+                    <p class="text-2xl font-bold text-white">03 Unidades</p>
+                </div>
+            </div>
+            <div class="bg-[#111117] p-6 rounded-2xl border border-[#2a2a33] shadow-sm flex items-center gap-5 group hover:bg-[#1a1a22] transition-all">
+                <div class="bg-[#0a0a0f] p-4 rounded-xl text-[#cbd5e6] group-hover:scale-110 transition-transform">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-[#6f6f80] uppercase tracking-wider">Integridade de Dados</p>
+                    <p class="text-2xl font-bold text-white">LGPD Compliance</p>
+                </div>
+            </div>
+            <div class="bg-[#111117] p-6 rounded-2xl border border-[#2a2a33] shadow-sm flex items-center gap-5 group hover:bg-[#1a1a22] transition-all sm:col-span-2 lg:col-span-1">
+                <div class="bg-[#0a0a0f] p-4 rounded-xl text-[#cbd5e6] group-hover:scale-110 transition-transform">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-[#6f6f80] uppercase tracking-wider">Processamento</p>
+                    <p class="text-2xl font-bold text-white">Tempo Real</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="mb-8 flex items-center justify-between border-b border-[#2a2a33] pb-4">
+            <h3 class="text-sm font-black uppercase tracking-[0.3em] text-[#8f8fa0]">Acesso aos Módulos</h3>
+            <span class="text-[10px] bg-[#2a2a33] text-white px-2 py-0.5 rounded">v2.4.0</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
+            
+            <a href="exercicio1/index.html" class="group relative bg-[#111117] rounded-3xl border border-[#2a2a33] p-8 transition-all duration-500 hover:border-[#cbd5e6] hover:-translate-y-2 flex flex-col h-full overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                
+                <div class="bg-[#1a1a22] w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border border-[#2a2a33] group-hover:bg-[#cbd5e6] group-hover:text-[#0a0a0f] transition-colors duration-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                
+                <h2 class="text-2xl font-bold text-white mb-4 group-hover:text-[#cbd5e6] transition-colors">Horas Extras</h2>
+                <p class="text-[#6f6f80] text-sm leading-relaxed mb-8 flex-grow">Calcule adicionais de 50%, 100% e DSR de forma automatizada conforme a legislação vigente.</p>
+                
+                <div class="flex items-center justify-between mt-auto pt-6 border-t border-[#1a1a22]">
+                    <span class="text-[10px] font-black uppercase tracking-widest text-[#4a4a5a]">Módulo de Folha</span>
+                    <div class="w-8 h-8 rounded-full bg-[#1a1a22] flex items-center justify-center group-hover:bg-[#cbd5e6] group-hover:text-[#0a0a0f] transition-all">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="exercicio2/index.html" class="group relative bg-[#111117] rounded-3xl border border-[#2a2a33] p-8 transition-all duration-500 hover:border-[#cbd5e6] hover:-translate-y-2 flex flex-col h-full overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path></svg>
+                </div>
+                
+                <div class="bg-[#1a1a22] w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border border-[#2a2a33] group-hover:bg-[#cbd5e6] group-hover:text-[#0a0a0f] transition-colors duration-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                </div>
+                
+                <h2 class="text-2xl font-bold text-white mb-4 group-hover:text-[#cbd5e6] transition-colors">Reajuste Salarial</h2>
+                <p class="text-[#6f6f80] text-sm leading-relaxed mb-8 flex-grow">Simule aumentos por mérito ou dissídio coletivo com visualização imediata do impacto orçamentário.</p>
+                
+                <div class="flex items-center justify-between mt-auto pt-6 border-t border-[#1a1a22]">
+                    <span class="text-[10px] font-black uppercase tracking-widest text-[#4a4a5a]">Retenção & Carreira</span>
+                    <div class="w-8 h-8 rounded-full bg-[#1a1a22] flex items-center justify-center group-hover:bg-[#cbd5e6] group-hover:text-[#0a0a0f] transition-all">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="exercicio3/index.html" class="group relative bg-[#111117] rounded-3xl border border-[#2a2a33] p-8 transition-all duration-500 hover:border-[#cbd5e6] hover:-translate-y-2 flex flex-col h-full overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                </div>
+                
+                <div class="bg-[#1a1a22] w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border border-[#2a2a33] group-hover:bg-[#cbd5e6] group-hover:text-[#0a0a0f] transition-colors duration-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                </div>
+                
+                <h2 class="text-2xl font-bold text-white mb-4 group-hover:text-[#cbd5e6] transition-colors">Transporte</h2>
+                <p class="text-[#6f6f80] text-sm leading-relaxed mb-8 flex-grow">Gestão de fretados e vale-transporte com tabela regressiva e análise de rotas otimizadas.</p>
+                
+                <div class="flex items-center justify-between mt-auto pt-6 border-t border-[#1a1a22]">
+                    <span class="text-[10px] font-black uppercase tracking-widest text-[#4a4a5a]">Logística de Pessoal</span>
+                    <div class="w-8 h-8 rounded-full bg-[#1a1a22] flex items-center justify-center group-hover:bg-[#cbd5e6] group-hover:text-[#0a0a0f] transition-all">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+<footer class="mt-20 pb-10 border-t border-[#2a2a33]">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-10 px-2">
+        
+        <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+                <div class="w-2 h-6 bg-[#cbd5e6] rounded-full"></div>
+                <h4 class="text-white font-bold uppercase tracking-widest text-xs">Desenvolvimento</h4>
+            </div>
+            <p class="text-sm font-semibold text-[#cbd5e6]">Beatriz Sousa de Andrade</p>
+            <p class="text-xs text-[#6f6f80] leading-relaxed">
+                Engenharia de Software & Soluções para RH. <br>
+                Projeto desenvolvido para automação de gestão corporativa.
             </p>
         </div>
-        
-        <!-- Stats Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-10 lg:mb-14">
-            
-            <!-- Stat Card 1 -->
-            <div class="bg-[#111117] rounded-2xl p-5 md:p-6 border border-[#2a2a33] hover:border-[#cbd5e6]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#cbd5e6]/5 group">
-                <div class="flex items-center justify-between mb-3">
-                    <div class="bg-gradient-to-br from-[#2c2c38] to-[#23222e] p-2.5 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-5 h-5 text-[#cbd5e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+
+        <div class="flex flex-col gap-3">
+            <h4 class="text-[#8f8fa0] font-bold uppercase tracking-widest text-[10px]">Contacto Direto</h4>
+            <div class="flex flex-col gap-3">
+                <a href="mailto:beatriz.sandrade.senai@gmail.com" class="group flex items-center gap-3 bg-[#111117] p-3 rounded-xl border border-[#2a2a33] hover:border-[#cbd5e6] transition-all">
+                    <div class="bg-[#1a1a22] p-2 rounded-lg text-[#6f6f80] group-hover:text-[#cbd5e6]">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
                     </div>
-                    <span class="text-3xl font-bold text-[#cbd5e6]">03</span>
-                </div>
-                <h3 class="text-white font-semibold text-base md:text-lg mb-1">Módulos Ativos</h3>
-                <p class="text-xs text-[#6f6f80]">Exercícios disponíveis para acesso</p>
-            </div>
-            
-            <!-- Stat Card 2 -->
-            <div class="bg-[#111117] rounded-2xl p-5 md:p-6 border border-[#2a2a33] hover:border-[#cbd5e6]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#cbd5e6]/5 group">
-                <div class="flex items-center justify-between mb-3">
-                    <div class="bg-gradient-to-br from-[#2c2c38] to-[#23222e] p-2.5 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-5 h-5 text-[#cbd5e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <span class="text-3xl font-bold text-[#cbd5e6]">100%</span>
-                </div>
-                <h3 class="text-white font-semibold text-base md:text-lg mb-1">Prontos para Uso</h3>
-                <p class="text-xs text-[#6f6f80]">Todos os módulos disponíveis</p>
-            </div>
-            
-            <!-- Stat Card 3 -->
-            <div class="bg-[#111117] rounded-2xl p-5 md:p-6 border border-[#2a2a33] hover:border-[#cbd5e6]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#cbd5e6]/5 group sm:col-span-2 lg:col-span-1">
-                <div class="flex items-center justify-between mb-3">
-                    <div class="bg-gradient-to-br from-[#2c2c38] to-[#23222e] p-2.5 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-5 h-5 text-[#cbd5e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <span class="text-3xl font-bold text-[#cbd5e6]">24/7</span>
-                </div>
-                <h3 class="text-white font-semibold text-base md:text-lg mb-1">Disponibilidade</h3>
-                <p class="text-xs text-[#6f6f80]">Acesso a qualquer momento</p>
+                    <span class="text-xs text-[#8f8fa0] group-hover:text-[#cbd5e6] transition-colors">beatriz.sandrade.senai@gmail.com</span>
+                </a>
             </div>
         </div>
-        
-        <!-- Modules Section Header -->
-        <div class="flex items-center justify-between mb-6 lg:mb-8">
-            <h3 class="text-xl lg:text-2xl font-bold text-white flex items-center gap-2">
-                <svg class="w-6 h-6 text-[#cbd5e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
-                </svg>
-                Módulos do Sistema
-            </h3>
-            <div class="hidden lg:block text-xs text-[#6f6f80]">3 módulos disponíveis</div>
-        </div>
-        
-        <!-- Cards Grid - Responsivo -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            
-            <!-- Exercício 1 Card - Calculadora de Horas Extras -->
-            <a href="exercicio1/index.html" class="group block bg-[#111117] rounded-2xl border border-[#2a2a33] overflow-hidden hover:border-[#cbd5e6] hover:shadow-2xl hover:shadow-[#cbd5e6]/10 transition-all duration-500 hover:-translate-y-2">
-                <div class="p-6 lg:p-8">
-                    <div class="bg-gradient-to-br from-[#2c2c38] to-[#23222e] w-14 h-14 lg:w-16 lg:h-16 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                        <svg class="w-7 h-7 lg:w-8 lg:h-8 text-[#cbd5e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"></path>
-                        </svg>
-                    </div>
-                    
-                    <h2 class="text-xl lg:text-2xl font-bold text-white mb-3 group-hover:text-[#cbd5e6] transition-colors duration-300">
-                        Calculadora de Horas Extras
-                    </h2>
-                    <p class="text-[#8f8fa0] text-sm lg:text-base leading-relaxed mb-5">
-                        Cálculo preciso de horas extras com base em percentuais legais e adicionais noturnos.
-                    </p>
-                    
-                    <div class="flex items-center justify-between flex-wrap gap-3">
-                        <div class="flex items-center gap-2">
-                            <span class="px-3 py-1 bg-[#1a1a22] rounded-full text-xs font-medium text-[#cbd5e6] border border-[#2a2a33]">
-                                RH & Folha
-                            </span>
-                            <span class="px-3 py-1 bg-[#1a1a22] rounded-full text-xs font-medium text-[#8f8fa0] border border-[#2a2a33]">
-                                Cálculo Automático
-                            </span>
-                        </div>
-                        <span class="text-[#cbd5e6] text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
-                            Acessar Módulo
-                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </span>
-                    </div>
+
+        <div class="flex flex-col items-start md:items-end gap-3">
+            <h4 class="text-[#8f8fa0] font-bold uppercase tracking-widest text-[10px]">Sistema em Tempo Real</h4>
+            <div class="bg-[#111117] px-5 py-3 rounded-2xl border border-[#2a2a33] flex items-center gap-4 shadow-2xl">
+                <div class="flex flex-col items-end">
+                    <span id="data-hora" class="text-sm font-mono font-bold text-[#cbd5e6] tracking-tighter">00/00/0000 | 00:00:00</span>
+                    <span class="text-[9px] text-[#4a4a5a] uppercase font-bold tracking-[0.2em]">Sincronizado</span>
                 </div>
-            </a>
-            
-            <!-- Exercício 2 Card - Calculadora de Aumento Salarial -->
-            <a href="exercicio2/index.html" class="group block bg-[#111117] rounded-2xl border border-[#2a2a33] overflow-hidden hover:border-[#cbd5e6] hover:shadow-2xl hover:shadow-[#cbd5e6]/10 transition-all duration-500 hover:-translate-y-2">
-                <div class="p-6 lg:p-8">
-                    <div class="bg-gradient-to-br from-[#2c2c38] to-[#23222e] w-14 h-14 lg:w-16 lg:h-16 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-300">
-                        <svg class="w-7 h-7 lg:w-8 lg:h-8 text-[#cbd5e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
-                        </svg>
-                    </div>
-                    
-                    <h2 class="text-xl lg:text-2xl font-bold text-white mb-3 group-hover:text-[#cbd5e6] transition-colors duration-300">
-                        Calculadora de Aumento Salarial
-                    </h2>
-                    <p class="text-[#8f8fa0] text-sm lg:text-base leading-relaxed mb-5">
-                        Ferramenta inteligente para calcular ajustes salariais, dissídios e reajustes por mérito.
-                    </p>
-                    
-                    <div class="flex items-center justify-between flex-wrap gap-3">
-                        <div class="flex items-center gap-2">
-                            <span class="px-3 py-1 bg-[#1a1a22] rounded-full text-xs font-medium text-[#cbd5e6] border border-[#2a2a33]">
-                                Benefícios
-                            </span>
-                            <span class="px-3 py-1 bg-[#1a1a22] rounded-full text-xs font-medium text-[#8f8fa0] border border-[#2a2a33]">
-                                Simulação
-                            </span>
-                        </div>
-                        <span class="text-[#cbd5e6] text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
-                            Acessar Módulo
-                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </span>
-                    </div>
-                </div>
-            </a>
-            
-            <!-- Exercício 3 Card - Transporte de Colaboradores -->
-            <a href="exercicio3/index.html" class="group block bg-[#111117] rounded-2xl border border-[#2a2a33] overflow-hidden hover:border-[#cbd5e6] hover:shadow-2xl hover:shadow-[#cbd5e6]/10 transition-all duration-500 hover:-translate-y-2">
-                <div class="p-6 lg:p-8">
-                    <div class="bg-gradient-to-br from-[#2c2c38] to-[#23222e] w-14 h-14 lg:w-16 lg:h-16 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:translate-x-1 transition-all duration-300">
-                        <svg class="w-7 h-7 lg:w-8 lg:h-8 text-[#cbd5e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14"></path>
-                        </svg>
-                    </div>
-                    
-                    <h2 class="text-xl lg:text-2xl font-bold text-white mb-3 group-hover:text-[#cbd5e6] transition-colors duration-300">
-                        Transporte de Colaboradores
-                    </h2>
-                    <p class="text-[#8f8fa0] text-sm lg:text-base leading-relaxed mb-5">
-                        Calculadora de custo para transporte fretado com tabela de preços regressiva e otimização de rotas.
-                    </p>
-                    
-                    <div class="flex items-center justify-between flex-wrap gap-3">
-                        <div class="flex items-center gap-2">
-                            <span class="px-3 py-1 bg-[#1a1a22] rounded-full text-xs font-medium text-[#cbd5e6] border border-[#2a2a33]">
-                                Logística
-                            </span>
-                            <span class="px-3 py-1 bg-[#1a1a22] rounded-full text-xs font-medium text-[#8f8fa0] border border-[#2a2a33]">
-                                Custo Benefício
-                            </span>
-                        </div>
-                        <span class="text-[#cbd5e6] text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
-                            Acessar Módulo
-                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </span>
-                    </div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Additional Features Section -->
-        <div class="mt-12 lg:mt-16 pt-8 border-t border-[#2a2a33]">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#111117] transition-colors duration-300">
-                    <svg class="w-5 h-5 text-[#cbd5e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                <div class="bg-[#1a1a22] p-2 rounded-lg text-[#cbd5e6]">
+                    <svg class="w-4 h-4 animate-spin-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
-                    <span class="text-xs text-[#8f8fa0]">Dados Seguros</span>
-                </div>
-                <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#111117] transition-colors duration-300">
-                    <svg class="w-5 h-5 text-[#cbd5e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                    <span class="text-xs text-[#8f8fa0]">Alta Performance</span>
-                </div>
-                <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#111117] transition-colors duration-300">
-                    <svg class="w-5 h-5 text-[#cbd5e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                    </svg>
-                    <span class="text-xs text-[#8f8fa0]">Relatórios em Tempo Real</span>
-                </div>
-                <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#111117] transition-colors duration-300">
-                    <svg class="w-5 h-5 text-[#cbd5e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span class="text-xs text-[#8f8fa0]">Gestão Financeira</span>
                 </div>
             </div>
         </div>
-        
-        <!-- Footer -->
-        <div class="mt-10 pt-6 border-t border-[#2a2a33] text-center">
-            <p class="text-xs text-[#6f6f80] flex items-center justify-center gap-2">
-                <svg class="w-4 h-4 text-[#cbd5e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                Sistema Empresarial - Módulos de Gestão Corporativa
-            </p>
-            <p class="text-xs text-[#5a5a6e] mt-2">Selecione um módulo para iniciar sua experiência</p>
+    </div>
+
+    <div class="pt-8 border-t border-[#1a1a22] flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-[9px] text-[#3f3f4a] uppercase tracking-[0.3em] font-bold">
+            © 2026 Todos os direitos reservados • Beatriz Sousa de Andrade
+        </p>
+        <div class="flex items-center gap-4">
+            <span class="text-[9px] text-[#5a5a6e] font-bold uppercase bg-[#111117] px-2 py-1 rounded border border-[#2a2a33]">v2.4.0-stable</span>
         </div>
-    </main>
-    
+    </div>
+</footer>
+</main>
+<script>
+    function atualizarDataHora() {
+        const agora = new Date();
+        const dataFormatada = agora.toLocaleDateString('pt-BR', { 
+            day: '2-digit', month: '2-digit', year: 'numeric' 
+        });
+        const horaFormatada = agora.toLocaleTimeString('pt-BR');
+        
+        const display = document.getElementById('data-hora');
+        if(display) {
+            display.innerText = `${dataFormatada} | ${horaFormatada}`;
+        }
+    }
+    atualizarDataHora();
+    setInterval(atualizarDataHora, 1000);
+</script>
+
+<style>
+    @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+        animation: spin-slow 10s linear infinite;
+    }
+</style>
 </body>
 </html>
+    
+    

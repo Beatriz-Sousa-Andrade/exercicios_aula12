@@ -51,3 +51,30 @@ limparButton.addEventListener('click', function() {
     form.reset();
     resultadoDiv.innerHTML = '';
 });
+
+/**
+ * Lógica para o Desafio 2 - Objeto Date
+ * Esta função captura a data e hora do sistema e atualiza o HTML
+ */
+function atualizarRelogio() {
+    // Cria uma nova instância do objeto Date (Data/Hora atual)
+    const agora = new Date();
+
+    // Formata a data para o padrão brasileiro (Ex: 31/03/2026)
+    const dataFormatada = agora.toLocaleDateString('pt-BR');
+
+    // Formata a hora com segundos (Ex: 14:30:05)
+    const horaFormatada = agora.toLocaleTimeString('pt-BR');
+
+    // Seleciona o elemento pelo ID e insere o texto formatado
+    const display = document.getElementById('data-hora-display');
+    if (display) {
+        display.innerText = `${dataFormatada} | ${horaFormatada}`;
+    }
+}
+
+// Executa a função assim que o script é carregado
+atualizarRelogio();
+
+// Define um intervalo para atualizar o relógio a cada 1 segundo (1000ms)
+setInterval(atualizarRelogio, 1000);
